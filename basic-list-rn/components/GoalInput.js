@@ -1,6 +1,18 @@
 import { StyleSheet, View, TextInput, Button } from "react-native"
+import { useState } from "react";
 
-export default function GoalInput({ goal, handleInput, addGoalHandler }) {
+export default function GoalInput({ addGoalHandler }) {
+    const [goal, setGoal] = useState("");
+
+    function handleInput(value) {
+        setGoal(value);
+    }
+
+    function handleAddGoal() {
+        addGoalHandler(goal)
+        setGoal("");
+    }
+
     return (
         <View style={styles.inputContainer}>
             <TextInput
@@ -8,7 +20,7 @@ export default function GoalInput({ goal, handleInput, addGoalHandler }) {
                 value={goal}
                 onChangeText={handleInput}
             />
-            <Button color={"#A47551"} title='💩' onPress={addGoalHandler} />
+            <Button color={"#A47551"} title='💩' onPress={handleAddGoal} />
         </View>
     )
 }
