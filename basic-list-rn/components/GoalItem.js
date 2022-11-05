@@ -1,11 +1,13 @@
-import { StyleSheet, View, Text } from "react-native"
+import { StyleSheet, View, Text, Pressable } from "react-native"
 
 
-export default function GoalItem({ item }) {
+export default function GoalItem({ item, onDeleteItem }) {
     return (
-        <View style={styles.listItems}>
-            <Text style={styles.textColor}>{item.text}</Text>
-        </View>
+        <Pressable onPress={onDeleteItem.bind(this, item.id)}>
+            <View style={styles.listItems}>
+                <Text style={styles.textColor}>{item.text}</Text>
+            </View>
+        </Pressable>
     )
 }
 

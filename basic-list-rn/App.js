@@ -13,10 +13,16 @@ export default function App() {
     setListOfGoals((currentGoalList) => [...currentGoalList, { text: goal, id: Math.random().toString() }]);
   }
 
+  function deleteGoalHandler(id) {
+    setListOfGoals((currentGoalList) => {
+      return currentGoalList.filter(element => element.id !== id)
+    })
+  }
+
   return (
     <View style={styles.container}>
       <GoalInput addGoalHandler={addGoalHandler}></GoalInput>
-      <GoalList listOfGoals={listOfGoals}></GoalList>
+      <GoalList listOfGoals={listOfGoals} onDeleteItem={deleteGoalHandler}></GoalList>
     </View>
   );
 }
