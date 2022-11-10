@@ -7,6 +7,7 @@ import {
     Image,
 } from "react-native";
 import { useState } from "react";
+const goalImg = require("../assets/images/goal.png");
 
 export default function GoalInput({
     addGoalHandler,
@@ -28,12 +29,15 @@ export default function GoalInput({
     return (
         <Modal visible={isVisible} animationType='slide'>
             <View style={styles.inputContainer}>
+                <Image style={styles.image} source={goalImg} />
+
                 <TextInput
                     placeholder='Your course goal!'
                     value={goal}
                     onChangeText={handleInput}
                     style={styles.goalInput}
                 />
+
                 <View style={styles.buttonsContainer}>
                     <View style={styles.button}>
                         <Button color={"#A47551"} title='💩' onPress={handleAddGoal} />
@@ -59,6 +63,13 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         borderBottomColor: "#cccccc",
         borderBottomWidth: 1,
+        backgroundColor: "#ADD8E6"
+    },
+
+    image: {
+        width: 120,
+        height: 120,
+        margin: 24,
     },
 
     goalInput: {
@@ -67,6 +78,8 @@ const styles = StyleSheet.create({
         width: "70%",
         padding: 8,
         borderColor: "#cccccc",
+        borderRadius: 12,
+        backgroundColor: "white"
     },
 
     buttonsContainer: {
