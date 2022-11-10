@@ -5,6 +5,7 @@ import {
     Button,
     Modal,
     Image,
+    ToastAndroid
 } from "react-native";
 import { useState } from "react";
 const goalImg = require("../assets/images/goal.png");
@@ -21,9 +22,15 @@ export default function GoalInput({
     }
 
     function handleAddGoal() {
+        if (!goal) { return showToast(); }
+
         addGoalHandler(goal);
         setGoal("");
         handleCloseModal();
+    }
+
+    function showToast() {
+        ToastAndroid.show('You need to add a goal', ToastAndroid.CENTER)
     }
 
     return (
