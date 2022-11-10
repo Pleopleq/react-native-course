@@ -60,9 +60,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginBottom: 24,
         borderBottomColor: "#cccccc",
-        borderBottomWidth: 1,
         backgroundColor: "#ADD8E6"
     },
 
