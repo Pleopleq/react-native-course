@@ -1,7 +1,18 @@
-import { StyleSheet, View, TextInput, Button, Modal } from "react-native"
+import {
+    StyleSheet,
+    View,
+    TextInput,
+    Button,
+    Modal,
+    Image,
+} from "react-native";
 import { useState } from "react";
 
-export default function GoalInput({ addGoalHandler, isVisible, handleCloseModal }) {
+export default function GoalInput({
+    addGoalHandler,
+    isVisible,
+    handleCloseModal,
+}) {
     const [goal, setGoal] = useState("");
 
     function handleInput(value) {
@@ -9,14 +20,13 @@ export default function GoalInput({ addGoalHandler, isVisible, handleCloseModal 
     }
 
     function handleAddGoal() {
-        addGoalHandler(goal)
+        addGoalHandler(goal);
         setGoal("");
         handleCloseModal();
     }
 
-
     return (
-        <Modal visible={isVisible} animationType="slide">
+        <Modal visible={isVisible} animationType='slide'>
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder='Your course goal!'
@@ -30,30 +40,33 @@ export default function GoalInput({ addGoalHandler, isVisible, handleCloseModal 
                     </View>
 
                     <View style={styles.button}>
-                        <Button color={"red"} title="Cancel" onPress={handleCloseModal}></Button>
+                        <Button
+                            color={"red"}
+                            title='Cancel'
+                            onPress={handleCloseModal}></Button>
                     </View>
                 </View>
             </View>
         </Modal>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: "center",
         alignItems: "center",
         marginBottom: 24,
-        borderBottomColor: '#cccccc',
+        borderBottomColor: "#cccccc",
         borderBottomWidth: 1,
     },
 
     goalInput: {
         marginBottom: 24,
         borderWidth: 1,
-        width: '70%',
+        width: "70%",
         padding: 8,
-        borderColor: "#cccccc"
+        borderColor: "#cccccc",
     },
 
     buttonsContainer: {
@@ -63,5 +76,5 @@ const styles = StyleSheet.create({
     button: {
         width: "40%",
         marginHorizontal: 8,
-    }
-})
+    },
+});
