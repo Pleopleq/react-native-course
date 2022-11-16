@@ -13,7 +13,9 @@ export default function PrimaryButton({ btnLabel }) {
                 }
                 onPress={handleButtonPress}
                 android_ripple={{ color: "#640233" }}>
+
                 <Text style={styles.buttonText}>{btnLabel}</Text>
+
             </Pressable>
         </View>
     );
