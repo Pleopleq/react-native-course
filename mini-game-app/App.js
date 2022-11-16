@@ -1,11 +1,12 @@
 import { StyleSheet, View } from 'react-native';
+import { LinearGradient } from "expo-linear-gradient"
 import StartGameScreen from './screens/StartGameScreen';
 
 export default function App() {
   return (
-    <View style={styles.rootScreen}>
+    <LinearGradient colors={["#ddb52f", "#4e0329"]} style={styles.rootScreen}>
       <StartGameScreen></StartGameScreen>
-    </View>
+    </LinearGradient>
   );
 }
 
